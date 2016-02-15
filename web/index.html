@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript" src="js/ajax.js"></script>
+    </head>
+    <body>
+        <div id="pagina">
+            PERSONA
+            <br/>
+            NIF <input type="text" name="nif" id="nif" class="campos" />
+            <br/>
+            Nombre <input type="text" name="nombre" id="nombre" class="campos" />
+            <br/>
+            Fecha nacimiento <input type="date" name="fechaNac" id="fechaNac" class="campos" />
+            <br/><br/>
+            DIRECCION
+            <br/>
+            Calle <input type="text" name="calle" id="calle" class="campos" />
+            <br/>
+            Población <input type="text" name="poblacion" id="poblacion" class="campos" />
+            <br/>
+            Provincia <input type="text" name="provincia" id="provincia" class="campos" />
+            <br/>
+            Codigo Postal <input type="text" name="codPostal" id="codPostal" class="campos" />
+            <br/><br/>
+            <input type="submit" name="boton" id="boton" value="Insertar" onclick="funcionAjax(this.value)" />
+            <input type="submit" name="boton" id="boton" value="Listar" onclick="funcionAjax(this.value)" />
+            <input type="submit" name="boton" id="boton" value="Modificar" onclick="funcionAjax(this.value)" />
+            <input type="submit" name="boton" id="boton" value="Listar Todos" onclick="funcionAjax(this.value)" />
+            <input type="submit" name="boton" id="boton" value="Borrar" onclick="funcionAjax(this.value)" />
+        </div>
+        <div id="resultado">
+        </div>
+    </body>
+</html>

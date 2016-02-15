@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-feb-2016 13:43:47 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pojo.Persona" table="persona" catalog="hibernate_1a1" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="foreign">
+                <param name="property">direccion</param>
+            </generator>
+        </id>
+        <one-to-one name="direccion" class="pojo.Direccion" constrained="true" cascade="all"></one-to-one>
+        <property name="nif" type="string">
+            <column name="NIF" length="9" not-null="true" />
+        </property>
+        <property name="nombre" type="string">
+            <column name="NOMBRE" length="150" not-null="true" />
+        </property>
+        <property name="fechaNac" type="date">
+            <column name="FECHA_NAC" length="10" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
