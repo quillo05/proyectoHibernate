@@ -5,16 +5,11 @@ body {
 #contenedor{
 
     background-color:#A9BCF5;
-    margin: 0 auto;
-    margin-left: -550px;
-    margin-right: -650px;
     padding: 0px;
     padding-left:6px;
     padding-top:6px;
     padding-right:6px;
     position: absolute;
-
-    left: 50%;
     border-radius:20px;
     display: table;
     width: 1200px;

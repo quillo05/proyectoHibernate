@@ -71,15 +71,15 @@ public class servletMostrar extends HttpServlet {
                     
                     out.print("<table>");
                         out.print("<thead><tr>");
-                            out.print("<th>ID_PERSONA</th>");
-                            out.print("<th>NIF_PERSONA</th>");
-                            out.print("<th>NOMBRE_PERSONA</th>");
+                            out.print("<th>PERSONA</th>");
+                            out.print("<th>NIF</th>");
+                            out.print("<th>NOMBRE</th>");
                             out.print("<th>FECHA_NACIMIENTO</th>");
-                            out.print("<th>ID_DIRECCIÓN</th>");
-                            out.print("<th>CALLE_DIRECCIÓN</th>");
-                            out.print("<th>POBLACIÓN_DIRECCIÓN</th>");
-                            out.print("<th>PROVINCIA_DIRECCIÓN</th>");
-                            out.print("<th>CÓDIGO_POSTAL</th>");
+                            out.print("<th>DIRECCIÓN</th>");
+                            out.print("<th>CALLE</th>");
+                            out.print("<th>POBLACIÓN</th>");
+                            out.print("<th>PROVINCIA</th>");
+                            out.print("<th>COD_POSTAL</th>");
                         out.print("</tr></thead>");
                         out.print("<tbody>");
                             Iterator iterPersonas = personas.iterator();
