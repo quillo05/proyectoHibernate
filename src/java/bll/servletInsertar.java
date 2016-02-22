@@ -80,13 +80,21 @@ public class servletInsertar extends HttpServlet {
                 
                 Persona persona=ObjOp.mostrarPersona(ObjPersona, sessionBuild);
                 
+                String texto="";
+                
                 if (persona == null) {
                     ObjOp.insertarPersona(ObjPersona, sessionBuild);
-                    out.print("Persona insertada");
+                    texto="Persona insertada";
                 }
                 else {
-                    out.print("Error. Existe una persona con ese NIF");
+                    texto="Error. Existe una persona con ese NIF";
                 } 
+                
+                out.print("<table>");
+                    out.print("<tbody>");
+                        out.print("<tr><td colspan=\"9\">"+texto+"</td></tr>");
+                    out.print("</tbody>");
+                out.print("</table>");
                 
                 
             } catch (Exception e) {

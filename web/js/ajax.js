@@ -45,11 +45,7 @@ function funcionAjax (opcion) {
                 alert(respuesta);
             }
             else {
-                var elementos = document.getElementById('pagina').getElementsByClassName('campos');
-                for (var i=0; i<elementos.length; i++) {
-                    elementos[i].value = "";
-                }
-                document.getElementById('resultado').innerHTML = "<br/><br/>"+respuesta;
+                document.getElementById('resultado').innerHTML = respuesta;
             }
         }
         

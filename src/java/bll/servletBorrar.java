@@ -70,13 +70,20 @@ public class servletBorrar extends HttpServlet {
                 
                 boolean borrado = ObjOp.borrarPersona(ObjPersona, sessionBuild);
                 
+                String texto="";
+                
                 if (borrado) {
-                    
-                    out.print("Persona borrada");
+                    texto="Persona borrada";
                 }
                 else {
-                    out.print("Error. No existe ninguna persona con ese NIF");
+                    texto="Error. No existe ninguna persona con ese NIF";
                 }
+                
+                out.print("<table>");
+                    out.print("<tbody>");
+                        out.print("<tr><td colspan=\"9\">"+texto+"</td></tr>");
+                    out.print("</tbody>");
+                out.print("</table>");
                 
                 
             } catch (Exception e) {

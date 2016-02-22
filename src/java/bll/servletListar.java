@@ -68,11 +68,39 @@ public class servletListar extends HttpServlet {
                 Persona ObjPersona=ObjOp.mostrarPersona(new Persona(nif),sessionBuild);
 
                 if (ObjPersona != null) {
-                    out.print(ObjPersona);
+                    out.print("<table>");
+                        out.print("<thead><tr>");
+                            out.print("<th>ID_PERSONA</th>");
+                            out.print("<th>NIF_PERSONA</th>");
+                            out.print("<th>NOMBRE_PERSONA</th>");
+                            out.print("<th>FECHA_NACIMIENTO</th>");
+                            out.print("<th>ID_DIRECCIÓN</th>");
+                            out.print("<th>CALLE_DIRECCIÓN</th>");
+                            out.print("<th>POBLACIÓN_DIRECCIÓN</th>");
+                            out.print("<th>PROVINCIA_DIRECCIÓN</th>");
+                            out.print("<th>CÓDIGO_POSTAL</th>");
+                        out.print("</tr></thead>");
+                        out.print("<tbody><tr>");
+                            out.print("<td>"+ObjPersona.getId()+"</td>");
+                            out.print("<td>"+ObjPersona.getNif()+"</td>");
+                            out.print("<td>"+ObjPersona.getNombre()+"</td>");
+                            out.print("<td>"+ObjPersona.getFechaNac()+"</td>");
+                            out.print("<td>"+ObjPersona.getDireccion().getId()+"</td>");
+                            out.print("<td>"+ObjPersona.getDireccion().getCalle()+"</td>");
+                            out.print("<td>"+ObjPersona.getDireccion().getPoblacion()+"</td>");
+                            out.print("<td>"+ObjPersona.getDireccion().getProvincia()+"</td>");
+                            out.print("<td>"+ObjPersona.getDireccion().getCodigoPostal()+"</td>");
+                        out.print("</tr></tbody>");
+                    out.print("</table>");
                 }
                 else {
-                    out.print("Error. No existen personas registradas con ese NIF");   
+                    out.print("<table>");
+                    out.print("<tbody>");
+                    out.print("<tr><td colspan=\"9\">Error. No existen personas registradas con ese NIF</td></tr>");
+                    out.print("</tbody>");
+                    out.print("</table>");
                 }
+                
                 
             } catch (Exception e) {
                 System.out.println("Exception: "+e.getMessage());

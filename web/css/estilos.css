@@ -17,7 +17,7 @@ body {
     left: 50%;
     border-radius:20px;
     display: table;
-    width: 1000px;
+    width: 1200px;
     height: auto;
 
 }
@@ -29,5 +29,58 @@ body {
     background: #FFFFFF;
     background: linear-gradient(left, #FFFFFF, #F7F9FA);
 
+}
 
+#resultado table { 
+    border-collapse: collapse; 
+    text-align: left; 
+    width: 100%; 
+} 
+
+#resultado {
+    font: normal 12px/150% Arial, Helvetica, sans-serif; 
+    background: #fff; 
+    overflow: hidden; 
+    -webkit-border-radius: 3px; 
+    -moz-border-radius: 3px; 
+    border-radius: 3px; 
+}
+
+#resultado table td, #resultado table th { 
+    padding: 3px 10px; 
+}
+
+#resultado table thead th {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #991821), color-stop(1, #80141C) );
+    background:-moz-linear-gradient( center top, #991821 5%, #80141C 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#991821', endColorstr='#80141C');
+    background-color:#991821; 
+    color:#FFFFFF; 
+    font-size: 15px; 
+    font-weight: bold; 
+    border-left: 1px solid #B01C26; 
+} 
+
+#resultado table thead th:first-child { 
+    border: none; 
+}
+
+#resultado table tbody td { 
+    color: #80141C; 
+    border-left: 1px solid #F7CDCD;
+    font-size: 12px;
+    font-weight: normal; 
+}
+
+#resultado table tbody .alt td { 
+    background: #F7CDCD; 
+    color: #80141C; 
+}
+
+#resultado table tbody td:first-child { 
+    border-left: none; 
+}
+
+#resultado table tbody tr:last-child td { 
+    border-bottom: none; 
 }

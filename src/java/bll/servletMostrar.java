@@ -9,8 +9,6 @@ import dao.HibernateUtil;
 import dao.Operaciones;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.Iterator;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -70,13 +68,53 @@ public class servletMostrar extends HttpServlet {
                 List <Persona> personas=ObjOp.listarPersonas(sessionBuild);
                 
                 if (personas.size() > 0) {
-                    Iterator iterPersonas = personas.iterator();
-                    while (iterPersonas.hasNext()) {
-                        out.print(iterPersonas.next()+"<br/>");
-                    }
+                    
+                    out.print("<table>");
+                        out.print("<thead><tr>");
+                            out.print("<th>ID_PERSONA</th>");
+                            out.print("<th>NIF_PERSONA</th>");
+                            out.print("<th>NOMBRE_PERSONA</th>");
+                            out.print("<th>FECHA_NACIMIENTO</th>");
+                            out.print("<th>ID_DIRECCIÓN</th>");
+                            out.print("<th>CALLE_DIRECCIÓN</th>");
+                            out.print("<th>POBLACIÓN_DIRECCIÓN</th>");
+                            out.print("<th>PROVINCIA_DIRECCIÓN</th>");
+                            out.print("<th>CÓDIGO_POSTAL</th>");
+                        out.print("</tr></thead>");
+                        out.print("<tbody>");
+                            Iterator iterPersonas = personas.iterator();
+                            int c=0;
+                            String estilo = "";
+                            while (iterPersonas.hasNext()) {
+                                Persona ObjPersona = (Persona)iterPersonas.next();
+                                if ((c%2) == 0) {
+                                    estilo = "";
+                                }
+                                else {
+                                    estilo = "alt";
+                                }
+                                out.print("<tr class='"+estilo+"'>");
+                                    out.print("<td>"+ObjPersona.getId()+"</td>");
+                                    out.print("<td>"+ObjPersona.getNif()+"</td>");
+                                    out.print("<td>"+ObjPersona.getNombre()+"</td>");
+                                    out.print("<td>"+ObjPersona.getFechaNac()+"</td>");
+                                    out.print("<td>"+ObjPersona.getDireccion().getId()+"</td>");
+                                    out.print("<td>"+ObjPersona.getDireccion().getCalle()+"</td>");
+                                    out.print("<td>"+ObjPersona.getDireccion().getPoblacion()+"</td>");
+                                    out.print("<td>"+ObjPersona.getDireccion().getProvincia()+"</td>");
+                                    out.print("<td>"+ObjPersona.getDireccion().getCodigoPostal()+"</td>");
+                                out.print("</tr>");
+                                c++;
+                            }
+                        out.print("</tbody>");
+                    out.print("</table>");
                 }
                 else {
-                 out.print("Error. No existen personas registradas");   
+                    out.print("<table>");
+                        out.print("<tbody>");
+                        out.print("<tr><td colspan=\"9\">Error. No existen personas registradas</td></tr>");
+                        out.print("</tbody>");
+                    out.print("</table>");
                 }
                 
             } catch (Exception e) {

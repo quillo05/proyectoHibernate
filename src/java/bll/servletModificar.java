@@ -82,13 +82,20 @@ public class servletModificar extends HttpServlet {
                 
                 boolean modificado = ObjOp.modificarPersona(ObjPersona, sessionBuild);
                 
+                String texto = "";
+                
                 if (modificado) {
-                    
-                    out.print("Persona modificada");
+                    texto="Persona modificada";
                 }
                 else {
-                    out.print("Error. No existe ninguna persona con ese NIF");
+                    texto="Error. No existe ninguna persona con ese NIF";
                 } 
+                
+                out.print("<table>");
+                    out.print("<tbody>");
+                        out.print("<tr><td colspan=\"9\">"+texto+"</td></tr>");
+                    out.print("</tbody>");
+                out.print("</table>");
                 
                 
             } catch (Exception e) {
